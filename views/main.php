@@ -24,20 +24,30 @@
 	        </ul>
 
 	        <ul class="navbar-nav navbar-right">
-	          <li>
+	        	<?php if(isset($_SESSION['is_logged_in'])) : ?>
+	        	<li>
+	            <a class="nav-link" href="<?php echo ROOT_URL; ?>">Welcome</a></li>
+	          	<li>
+	            <a class="nav-link" href="<?php echo ROOT_URL; ?>users/logout">Logout</a>
+	          	</li>
+
+	          <?php else : ?>
+	          	<li>
 	            <a class="nav-link" href="<?php echo ROOT_URL; ?>users/login">Log In</a>
-	          </li>
-	          <li>
+	          	</li>
+	          	<li>
 	            <a class="nav-link" href="<?php echo ROOT_URL; ?>users/register">Sign Up</a>
-	          </li>
+	          	</li>
+	          <?php endif; ?>
 	        </ul>
 	      </div>
     </nav>
 
     <div class="container">
 
-      <div class="row"
+      <div class="row">
       	<?php require($view); ?>
+      	<?php Messages::display(); ?>
       </div>
 
     </div>
