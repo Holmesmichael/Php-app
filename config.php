@@ -1,6 +1,6 @@
 <?php
 
-//Define DB params
+//Define DB params - connection to DB
 define("DB_HOST", "localhost");
 define("DB_USER", "root");
 define("DB_PASS", "");
